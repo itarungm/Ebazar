@@ -1,0 +1,53 @@
+<div class="page-area bg-danger text-white">
+    <div class="contact-upper text-center bg-danger">
+        <h1>Contact</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, repellendus.</p>
+    </div>
+
+    <hr class="mb-3">
+
+<div class="contact">
+    <div class="inner-contact">
+    <form [formGroup]="ReactForm" (ngSubmit)="onSubmit()">
+      <div formGroupName="UserD">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" formControlName="name" class="form-control" placeholder="Enter Name" id="name">
+          <small class="text-warning" *ngIf="!ReactForm.get('UserD.name').valid && ReactForm.get('UserD.name').touched">Please enter name.</small>
+          </div>
+        <div class="form-group">
+          <label for="email">Email address:</label>
+          <input type="email" formControlName="email" class="form-control" placeholder="Enter email" id="email">
+          <small class="text-warning" *ngIf="!ReactForm.get('UserD.email').valid && ReactForm.get('UserD.email').touched">Please enter valid email.</small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="gender">Gender:</label>
+      <div class="custom-control custom-radio" *ngFor="let gender of genders">
+        <input type="radio" id="{{gender.id}}" formControlName="gender" value="{{gender.genderType}}" class="custom-control-input">
+        <label class="custom-control-label" for="{{gender.id}}">
+          {{gender.genderType}}
+        </label>
+      </div>
+    </div>
+
+        <div class="form-group msg">
+          <label for="mssg">Message:</label><br>
+            <textarea name="" formControlName="msg" id="" cols="58" rows="5"></textarea>
+            <small class="text-warning" *ngIf="!ReactForm.get('msg').valid && ReactForm.get('msg').touched">Please enter your message.</small>
+        
+          </div>
+
+        <div class="form-group">
+            <label for="phone"> </label><br>
+                <input type="tel" formControlName="phone" name="" id="phone" placeholder="9876543210">
+                <small class="text-warning" *ngIf="!ReactForm.get('phone').valid && ReactForm.get('phone').touched">Please enter 10 Digit valid phone number.</small>
+              </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+
+</div>
+</div>

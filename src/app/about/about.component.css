@@ -1,0 +1,24 @@
+.abt{
+    color: #f3403c;
+}
+.btn-success{
+    background: linear-gradient(288deg, #FFE53B 0%, #FF2525 65%);
+
+}
+.but{
+    font-size: 20px;
+    font-weight: 500;
+    width: 140px;
+    height: 50px;
+    border-radius: 0;
+    color: white;
+}
+.col-lg{
+    margin-left: 40px;
+}
+img{
+    border-radius: 10px;
+}
+.b-left{
+  border-left: 5px solid blue ;
+}

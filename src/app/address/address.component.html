@@ -1,0 +1,70 @@
+<div class="contain">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 col-xl-9 mx-auto">
+          <div class="card card-signin flex-row my-5">
+            <div class="card-img-left d-none d-md-flex">
+               <!-- Background image for card set in CSS! -->
+            </div>
+            <div class="card-body">
+              <h5 class="card-title text-center">Delivery Address</h5>
+              <form class="form-signin">
+                <div class="form-label-group">
+                  <input type="text" id="inputUserame" class="form-control" placeholder="Full Name" required autofocus>
+                  <label for="inputUserame">Name</label>
+                </div>
+
+                <div class="form-label-group">
+                  <input type="text" id="inputEmail" class="form-control" placeholder="Full Address" required>
+                  <label for="inputEmail">Address</label>
+                </div>
+
+                <div class="form-label-group">
+                  <input type="number" id="inputPassword" class="form-control" placeholder="Pin Code" required>
+                  <label for="inputPassword">Pin Code</label>
+                </div>
+
+                <hr>
+
+                <div class="form-label-group">
+                  <input type="number" id="inputConfirmPassword" class="form-control" placeholder="Phone Number" required>
+                  <label for="inputConfirmPassword">Phone Number</label>
+                </div>
+
+                <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" (click)="pay()">Go to Payment</button>
+                <hr class="my-4">
+                <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit" routerLink="/cart"><i class="fa fa-shopping-cart mr-2"></i> Review Order</button>
+
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- Right Cart Information -->
+        <div class="right-cart row">
+          <div>
+          <h2 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="text-white">Your cart &nbsp;</span>
+            <span class="badge badge-secondary badge-success">1</span>
+           </h2>
+           <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">{{productname}}&nbsp;</h6>
+              </div>
+              <span class="text-muted">₹{{price}}</span>
+            </li>
+
+
+            <li class="list-group-item d-flex justify-content-between bg-light">
+              <span class="text-success">Total (INR)</span>
+              <strong>₹{{price}}</strong>
+            </li>
+          </ul>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+</div>

@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Chettan+2&display=swap');
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    --input-padding-x: 1.5rem;
+  --input-padding-y: .75rem;
+}
+
+.modal-content1{
+    font-family: 'Baloo Chettan 2', cursive;
+    padding-left: 10px;
+    width: 620px;
+    margin-left: -90px;
+    background-color: #e1effc;
+}
+.modal-footer p{
+    color: red;
+}

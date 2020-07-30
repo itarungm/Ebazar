@@ -1,0 +1,109 @@
+<ngx-loading-bar [height]="'5px'" [color]="'#ff0000'" [includeSpinner]="false"></ngx-loading-bar>
+<nav class="navbar navbar-expand-sm bg-dark border navbar-dark header">
+  <!-- Brand -->
+  <a class="navbar-brand" routerLink="/"> <img src="../assets/images/EBazar.png" alt="EBazar" style="width:40px; margin-top: -40;">
+  </a>
+<div class="menu">
+
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/products">Products</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/about">About Us</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/contact">Contact Us</a>
+    </li>
+  </ul>
+</div>
+  <h1 class="brand text-center"><span id="e">E</span>Bazar</h1>
+  <ul class="nav navbar-nav creden">
+    <li class="log"><a data-toggle="modal" data-target="#myModal" class="login"><strong>Login</strong></a></li>
+    <li><a routerLink="/cart"><i class="fa fa-cart-plus fa-3x cart" aria-hidden="true"></i>
+      <!-- <i class="fa" style="font-size:24px">&#xf07a;</i> -->
+
+        <span *ngIf="Count" class='badge badge-warning' id='lblCartCount'> 1 </span>
+
+    </a></li>
+  </ul>
+</nav>
+
+
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title text-white">Login</h4>
+
+        <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+          <div class="frm">
+            <form action="/action_page.php">
+              <div class="form-group">
+                <input type="email" class="form-control" placeholder="Enter Email/Mobile Number" id="email" #loginemail>
+              </div>
+              <div class="form-group">
+                <input type="password" class="form-control" placeholder="Enter Password" id="pwd" #loginpass>
+              </div>
+
+              <button type="submit" id="login" class="btn btn-primary" (click)="login(loginemail.value,loginpass.value)">Login</button>
+            </form>
+          </div>
+      </div>
+      <div *ngIf="loginsuc" class="alert alert-success">Login Successfully</div>
+      <div *ngIf="loginfail" class="alert alert-danger">Invalid Username and Password</div>
+
+      <div class="modal-footer">
+        <a data-dismiss="modal" data-toggle="modal" data-target="#myModal1" class="login"><h5>New to EBazar? Create an account</h5></a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Sign Up Modal -->
+<div id="myModal1" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title text-white">SignUp</h4>
+
+        <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
+      </div>
+
+      <div class="modal-body">
+          <div class="frm">
+            <form action="/action_page.php">
+              <div class="form-group">
+                <input type="email" class="form-control" placeholder="Enter Email/Mobile Number" id="email" #signemail>
+              </div>
+              <div class="form-group">
+                <input type="password" class="form-control" placeholder="Enter Password" id="pwd" #signpass>
+              </div>
+             <div class="alert alert-success" *ngIf="regsuc">Registration Successful</div>
+             <div class="alert alert-warning" *ngIf="regfail">Please Give Proper value</div>
+
+              <button type="submit" id="login" class="btn btn-primary" (click)="reg(signemail.value,signpass.value)">{{account}}</button>
+            </form>
+          </div>
+      </div>
+
+      <div class="modal-footer">
+        <p><a data-dismiss="modal" data-toggle="modal" data-target="#myModal" class="login"><h5>Existing User? Log In</h5></a></p>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+<router-outlet></router-outlet>

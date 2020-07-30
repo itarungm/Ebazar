@@ -1,0 +1,45 @@
+<div class="page-area text-center bg-warning text-dark">
+    <h1>Products</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, repellendus.</p>
+    <hr class="mb-3">
+</div>
+
+<div *ngIf="me" class="check bg-success text-center text-white m-auto">
+    <h1>{{pName}} is Added to the Cart</h1>
+    <button class="out btn btn-warning text-dark" routerLink="/cart"><strong>Check Out</strong></button>
+</div>
+
+<form>
+   <input type="text" name="search" class="search form-control" placeholder="&#61447;Search Product by Name" [(ngModel)]="namesearch">
+</form>
+
+<div class="row mt-4">
+
+    <div class="col-md-12 text-center">
+        <div class="card" style="width: 18rem;" *ngFor="let product of productArr1 | productFilter:namesearch">
+            <img src="{{product.image}}" class="card-img-top" alt="...">
+            <div class="shape-text">
+              <h3><strong>{{rup}}{{product.price}}</strong></h3>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">{{product.name}}</h5>
+              <p class="card-text">{{product.desc}}</p>
+              <button class="btn btn-success" (click)="selectedProduct(product.name,product.price)">Select This Product</button>
+            </div>
+        </div>
+        <div class="row">
+
+
+        </div>
+           <hr class="mb-3">
+
+          <div class="me">
+            <div class="bg-success">
+                <h1 class="text-white" *ngIf="!ProductSelect">Please Select Any Product</h1>
+                <h1 class="text-white" *ngIf="ProductSelect">{{pName}} is Selected</h1>
+               <button class="btn btn-warning" (click)="cart();updateText();updateB();updateCart();updatePrice();"><strong>Add To Cart</strong></button>
+            </div>
+        </div>
+
+
+</div>

@@ -1,0 +1,38 @@
+<div class="bg-warning p-2" *ngIf="checkProduct; else trueproduct">
+    <h1 class="text-center bg-center bg-blue"><i class="fa fa-cart-plus cart cart-empty" aria-hidden="true"></i> &nbsp;&nbsp;is &nbsp;Empty</h1>
+    <div></div>
+</div>
+ 
+ <ng-template #trueproduct>
+    <div class="bg-warning p-2">
+        <h1 class="text-center bg-center bg-blue"><span style="color: red;">{{Product}}</span> is in Cart.</h1> 
+    </div>
+ </ng-template>
+<div class="bdy">
+    <div class="container" *ngIf="!checkProduct">
+        <h1 class="shop-head">Shopping Cart</h1>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Product Id</th>
+              <th>Product Name</th>
+              <th>Product Price (₹)</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+                <td>01</td>
+                <td>{{Product}}</td>
+                <td>{{price}}</td>
+                <td><button class="btn btn-danger" (click)="removeProduct();updateCart();">Remove</button></td>
+            </tr>
+          </tbody>
+        </table>
+      <button class="btn buy-now" (click)="CheckLogin()"><i class="fa fa-shopping-cart"></i>&nbsp;&nbsp;&nbsp;&nbsp;BUY NOW</button>
+
+      </div>
+
+</div>
+
+

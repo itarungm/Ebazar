@@ -1,0 +1,48 @@
+.bdy{
+    background-image: url(../../assets/images/cart/bg-cart.jpeg);
+    background-color:rgb(0, 0,0,0.5);
+    background-blend-mode: overlay;
+    background-repeat: no-repeat;
+    height: 80vh;
+    background-position: center;
+}
+.cart-empty{
+    font-size: 45px;
+}
+.shop-head{
+    color: white;
+}
+
+/* Table Design */
+.table{
+    background-color: #1e2739;
+    color: white;
+    
+}
+.table tr th{
+background-color: yellow;
+color: black;
+}
+.table-hover tbody tr:hover td {
+    background: lightgreen;
+    transition: 0.5s;
+
+}
+
+/* Buy Now Button */
+.buy-now{
+    outline: none;
+    color: white;
+    font-size: 20px;
+    background: linear-gradient(to right, #f857a6, #ff5858); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border: 3px solid white;
+    border-radius: 20px;
+    height: 42px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    float: right;
+}
+.buy-now:active {
+    box-shadow: 0 5px 0 #fc354c;;
+    top: 5px;
+  }

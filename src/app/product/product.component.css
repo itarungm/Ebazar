@@ -1,0 +1,38 @@
+.card{
+    display: inline-block;
+    margin: 0 10px 10px;
+    width: 210px !important;
+}
+img{
+    text-align: center;
+    align-items: center;
+    height: 210px;
+    width: 210px;
+}
+.row{
+    width: 90%;
+    margin: auto;
+}
+.check{
+    width:95%;
+    height: 100px;
+    margin-bottom: 10px;
+
+}
+
+.shape-text{
+position: relative;
+top:5px;
+padding-bottom: 1px;
+  background-color: yellow;
+  color: purple;
+}
+.fa-search{
+  display: inline;
+}
+.search{
+
+  width: 75%;
+  margin: auto;
+  margin-top:10px;
+}
